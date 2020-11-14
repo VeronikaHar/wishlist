@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Button, Modal, FormControl } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Button, Modal, FormControl } from "react-bootstrap";
 
 const AddJobModal = (props) => {
-    const [company, setCompany]=useState(),
-          [title, setTitle]=useState();
+  const [company, setCompany] = useState(),
+    [title, setTitle] = useState();
 
   return (
     <>
@@ -12,17 +12,23 @@ const AddJobModal = (props) => {
           <Modal.Title>Add a job</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormControl placeholder="Company name" onChange={e=>setCompany(e.target.value)} />
-          <FormControl placeholder="Job title" onChange={e=>setTitle(e.target.value)}/>
+          <FormControl
+            placeholder="Company name"
+            onChange={(e) => setCompany(e.target.value)}
+          />
+          <FormControl
+            placeholder="Job title"
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={e=>props.addJob(company, title)}>
+          <Button onClick={(e) => props.addJob(company, title)}>
             Continue
           </Button>
         </Modal.Footer>
       </Modal>
     </>
   );
-}
+};
 
 export default AddJobModal;
