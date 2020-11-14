@@ -17,8 +17,8 @@ function MainView() {
   };
 
   const deleteJob = (job) => {
-      let arrId=jobs.indexOf(job);
-      jobs.splice(arrId, 1)
+    let arrId = jobs.indexOf(job);
+    jobs.splice(arrId, 1);
     setJobs([...jobs]);
   };
 
@@ -28,7 +28,9 @@ function MainView() {
       <p>
         {jobs.length} {jobs.length === 1 ? "JOB" : "JOBS"}
       </p>
-      <Button variant="light" onClick={showModal}>+</Button>
+      <Button className="add-btn" variant="light" onClick={showModal}>
+        +
+      </Button>
       <AddJobModal
         modalShow={modalShow}
         closeModal={closeModal}

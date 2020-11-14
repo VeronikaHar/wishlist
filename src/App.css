@@ -4,13 +4,27 @@
 }
 
 .btn {
-  width: 100%;
+  width: 98%;
   margin: 10px 0;
+}
+
+.add-btn {
+  color: #aaaaac;
+  font-size: 32px;
+  box-shadow: 3px 4px 3px #d1d0d0;
+  padding: 0;
+}
+
+.add-btn:hover, 
+.add-btn:focus,
+.add-btn:active {
+  outline: none;
+  background-color: #f8f9fa;
 }
 
 .card {
   padding: 0 20px;
-  margin: 20px 0;
+  margin: 10px 0;
   color: rgb(250, 250, 250, 0.9);
 }
 
