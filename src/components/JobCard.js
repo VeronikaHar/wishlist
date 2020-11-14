@@ -20,20 +20,18 @@ const JobCard = (props) => {
   }, [timer, job]);
 
   return (
-    <div className="col-12">
       <Card style={{backgroundColor: job.backgroundColor}}>
         <Card.Body>
           <Button variant="light" onClick={() => props.deleteJob(job)}></Button>
           <Card.Title>
-            <h5>{job.company}</h5>
+            {job.company}
           </Card.Title>
           <Card.Text>
-            {job.title}
+            {job.title} <br/>
             <span>{timer === 0 ? "added just now" : "added " + timer}</span>
           </Card.Text>
         </Card.Body>
       </Card>
-    </div>
   );
 };
 

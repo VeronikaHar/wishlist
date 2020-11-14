@@ -1,16 +1,13 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
 import JobCard from "./JobCard";
 
 const WishList = (props) => {
   return (
-    <Container>
-      <Row>
+    <div className="wishlist">
         {props.jobs.map((job) => {
           return <JobCard key={job.timestamp} job={job} deleteJob={props.deleteJob} />;
         })}
-      </Row>
-    </Container>
+    </div>
   );
 };
 

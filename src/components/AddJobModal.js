@@ -6,7 +6,7 @@ const AddJobModal = (props) => {
     [title, setTitle] = useState("");
 
   // create a variable for random card background color
-  const backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 90%)";
+  const backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 70%)";
 
   return (
     <>
@@ -25,7 +25,7 @@ const AddJobModal = (props) => {
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="light" onClick={(e) => {
+          <Button onClick={(e) => {
             if(company===null||title===null||company===""||title==="") {
               alert("Please fill out all the fields.")
             } else{
