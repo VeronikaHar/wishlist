@@ -6,7 +6,8 @@ const AddJobModal = (props) => {
     [title, setTitle] = useState("");
 
   // create a variable for random card background color
-  const backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 50%)";
+  const backgroundColor =
+    "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 50%)";
 
   return (
     <>
@@ -25,15 +26,22 @@ const AddJobModal = (props) => {
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={(e) => {
-            if(company===null||title===null||company===""||title==="") {
-              alert("Please fill out all the fields.")
-            } else{
-            props.addJob(Date.now(), company, title, backgroundColor);
-            setCompany("");
-            setTitle("");
-          }}
-          }>
+          <Button
+            onClick={(e) => {
+              if (
+                company === null ||
+                title === null ||
+                company === "" ||
+                title === ""
+              ) {
+                alert("Please fill out all the fields.");
+              } else {
+                props.addJob(Date.now(), company, title, backgroundColor);
+                setCompany("");
+                setTitle("");
+              }
+            }}
+          >
             Continue
           </Button>
         </Modal.Footer>
