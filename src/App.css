@@ -64,7 +64,7 @@
 }
 
 .form-control {
-  margin: 20px 0;
+  margin-bottom: 20px;
   height: 50px;
   padding: 15px;
 }
@@ -75,7 +75,8 @@
 } 
 
 .modal-body {
-  padding: 0;
+  padding: 30px 0;
+  text-align: center;
 }
 
 .modal-content {
@@ -85,18 +86,27 @@
 
 .modal-footer, .modal-header {
   border: none;
-  flex-direction: column-reverse;
+  flex-direction: row;
   padding: 0;
 }
 
-.close:hover {
+.modal-header {
+  flex-direction: column-reverse;
+}
+
+.modal-header .close:hover {
   color: rgb(111, 16, 189);
+}
+
+.modal-footer .btn {
+  height: 50px;
+  width: 45%;
+  margin: auto;
 }
 
 .modal-footer .btn-primary {
   background-color:  rgb(111, 16, 189);
   border-color:  rgb(111, 16, 189);
-  height: 50px;
 }
 
 .modal-footer .btn-primary:hover, 

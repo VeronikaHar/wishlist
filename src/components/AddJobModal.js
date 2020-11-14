@@ -6,7 +6,7 @@ const AddJobModal = (props) => {
     [title, setTitle] = useState("");
 
   // create a variable for random card background color
-  const backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 70%)";
+  const backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 50%)";
 
   return (
     <>
