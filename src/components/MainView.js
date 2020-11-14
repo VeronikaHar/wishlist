@@ -10,9 +10,9 @@ function MainView() {
   const closeModal = () => setModalShow(false);
   const showModal = () => setModalShow(true);
 
-  const addJob = (timestamp, company, title) => {
+  const addJob = (timestamp, company, title, backgroundColor) => {
     //update jobs
-    setJobs([...jobs, { timestamp, company, title }]);
+    setJobs([...jobs, { timestamp, company, title, backgroundColor }]);
     closeModal();
   };
 

@@ -21,7 +21,7 @@ const JobCard = (props) => {
 
   return (
     <div className="col-12">
-      <Card>
+      <Card style={{backgroundColor: job.backgroundColor}}>
         <Card.Body>
           <Button variant="light" onClick={() => props.deleteJob(job)}></Button>
           <Card.Title>
