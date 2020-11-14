@@ -7,10 +7,14 @@ const JobCard = (props) => {
 
   useEffect(() => {
     let minutes = Math.ceil((Date.now() - job.timestamp) / 60000);
+
+    // update how long ago job was posted every min of the 1st hour
     if (minutes < 60) {
       setInterval(() => {
         setTimer(minutes + " min ago");
       }, 60000);
+
+      //after 1h, display time and date when it was added
     } else {
       const timestamp = new Date(job.timestamp).toLocaleString();
       setTimer(timestamp);
@@ -28,6 +32,7 @@ const JobCard = (props) => {
           style={{ color: job.backgroundColor }}
           onClick={() => props.handleDelClick(job)}
         >
+          {/* trashbin svg */}
           <svg
             width="1em"
             height="1em"

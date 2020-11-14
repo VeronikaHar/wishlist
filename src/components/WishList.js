@@ -7,6 +7,8 @@ const WishList = (props) => {
     [job, setJob] = useState();
 
   const toggleModal = () => setDelModalShow(!delModalShow);
+
+  // when click on trashbin, open confirm delete modal and set job to delete
   const handleDelClick = (jobToDel) => {
     toggleModal();
     setJob(jobToDel);
