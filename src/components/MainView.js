@@ -18,6 +18,10 @@ function MainView() {
     closeModal();
   };
 
+  const deleteJob= idToDelete => {
+    setJobs([...jobs.filter((_, index) => index !== idToDelete)]);
+  };
+
   return (
     <Container>
       <h3>WISHLIST</h3>
@@ -30,7 +34,7 @@ function MainView() {
         closeModal={closeModal}
         addJob={addJob}
       />
-      <WishList jobs={jobs} />
+      <WishList jobs={jobs} deleteJob={deleteJob} />
     </Container>
   );
 }

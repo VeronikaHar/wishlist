@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 const JobCard = (props) => {
     let job=props.job;
@@ -8,6 +8,7 @@ const JobCard = (props) => {
         <div className="col-12">
             <Card>
                 <Card.Body>
+                    <Button onClick={()=>props.deleteJob(job.id)}></Button>
                     <Card.Title>
                         <h5>{job.company}</h5> 
                     </Card.Title>
