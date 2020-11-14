@@ -5,14 +5,16 @@ import { Button, Container } from "react-bootstrap";
 
 function MainView() {
   const [jobs, setJobs] = useState([]),
-    [modalShow, setModalShow] = useState(false);
+    [modalShow, setModalShow] = useState(false),
+    [jobId, setJobId]= useState(0);
 
   const closeModal = () => setModalShow(false);
   const showModal = () => setModalShow(true);
 
   const addJob = (company, title) => {
     //update jobs
-    setJobs(jobs.concat({ company, title }));
+    setJobs(jobs.concat({id:jobId, company, title }));
+    setJobId(jobId+1);
     closeModal();
   };
 
