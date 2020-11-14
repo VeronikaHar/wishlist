@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Button, Modal, FormControl } from "react-bootstrap";
 
 const AddJobModal = (props) => {
-  const [company, setCompany] = useState(),
-    [title, setTitle] = useState();
+  const [company, setCompany] = useState(""),
+    [title, setTitle] = useState("");
 
   return (
     <>
@@ -22,7 +22,15 @@ const AddJobModal = (props) => {
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={(e) => props.addJob(company, title)}>
+          <Button onClick={(e) => {
+            if((company||title)===(null||"")) {
+              alert("Please fill out all fields.")
+            } else{
+            props.addJob(company, title);
+            setCompany("");
+            setTitle("");
+          }}
+          }>
             Continue
           </Button>
         </Modal.Footer>
