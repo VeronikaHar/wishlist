@@ -14,6 +14,25 @@
   color: rgb(250, 250, 250, 0.9);
 }
 
+.card .delete-btn {
+  border-radius: 50%;
+  width: auto;
+  float: right;
+  margin-top: 0px;
+  display: none;
+}
+
+.card:hover .delete-btn {
+  display: block;
+  opacity: 0.5;
+}
+
+.card .delete-btn:hover {
+  display: block;
+  background-color: white;
+  opacity: 1;
+}
+
 .card-body {
   text-align: left;
 }
