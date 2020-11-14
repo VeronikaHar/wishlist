@@ -13,7 +13,7 @@ function MainView() {
 
   const addJob = (company, title) => {
     //update jobs
-    setJobs(jobs.concat({id:jobId, company, title }));
+    setJobs([...jobs, {id:jobId, company, title }]);
     setJobId(jobId+1);
     closeModal();
   };
