@@ -23,8 +23,8 @@ const AddJobModal = (props) => {
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={(e) => {
-            if((company||title)===(null||"")) {
-              alert("Please fill out all fields.")
+            if(company===null||title===null||company===""||title==="") {
+              alert("Please fill out all the fields.")
             } else{
             props.addJob(company, title);
             setCompany("");
