@@ -26,7 +26,7 @@ const AddJobModal = (props) => {
             if(company===null||title===null||company===""||title==="") {
               alert("Please fill out all the fields.")
             } else{
-            props.addJob(company, title);
+            props.addJob(Date.now(), company, title);
             setCompany("");
             setTitle("");
           }}

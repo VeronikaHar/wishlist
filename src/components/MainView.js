@@ -5,21 +5,21 @@ import { Button, Container } from "react-bootstrap";
 
 function MainView() {
   const [jobs, setJobs] = useState([]),
-    [modalShow, setModalShow] = useState(false),
-    [jobId, setJobId] = useState(0);
+    [modalShow, setModalShow] = useState(false);
 
   const closeModal = () => setModalShow(false);
   const showModal = () => setModalShow(true);
 
-  const addJob = (company, title) => {
+  const addJob = (timestamp, company, title) => {
     //update jobs
-    setJobs([...jobs, { id: jobId, company, title }]);
-    setJobId(jobId + 1);
+    setJobs([...jobs, { timestamp, company, title }]);
     closeModal();
   };
 
-  const deleteJob = (idToDelete) => {
-    setJobs([...jobs.filter((_, index) => index !== idToDelete)]);
+  const deleteJob = (job) => {
+      let arrId=jobs.indexOf(job);
+      jobs.splice(arrId, 1)
+    setJobs([...jobs]);
   };
 
   return (
@@ -28,7 +28,7 @@ function MainView() {
       <p>
         {jobs.length} {jobs.length === 1 ? "JOB" : "JOBS"}
       </p>
-      <Button onClick={showModal}>+</Button>
+      <Button variant="light" onClick={showModal}>+</Button>
       <AddJobModal
         modalShow={modalShow}
         closeModal={closeModal}

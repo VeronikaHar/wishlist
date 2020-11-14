@@ -7,7 +7,7 @@ const WishList = (props) => {
     <Container>
       <Row>
         {props.jobs.map((job) => {
-          return <JobCard key={job.id} job={job} deleteJob={props.deleteJob} />;
+          return <JobCard key={job.timestamp} job={job} deleteJob={props.deleteJob} />;
         })}
       </Row>
     </Container>
