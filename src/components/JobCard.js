@@ -16,6 +16,7 @@ const JobCard = (props) => {
 
       //after 1h, display time and date when it was added
     } else {
+      clearInterval(minutes)
       const timestamp = new Date(job.timestamp).toLocaleString();
       setTimer(timestamp);
     }
