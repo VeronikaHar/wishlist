@@ -6,19 +6,21 @@ const JobCard = (props) => {
   let job = props.job;
 
   useEffect(() => {
-    let minutes = Math.ceil((Date.now() - job.timestamp) / 60000);
+    let minutes = Math.floor((Date.now() - job.timestamp) / 60000);
 
     // update how long ago job was posted every min of the 1st hour
-    if (minutes < 60) {
+    if (0< minutes && minutes < 60) {
       setInterval(() => {
         setTimer(minutes + " min ago");
+        console.log(timer, minutes)
       }, 60000);
 
       //after 1h, display time and date when it was added
     } else {
-      clearInterval(minutes)
+      clearInterval(minutes);
       const timestamp = new Date(job.timestamp).toLocaleString();
       setTimer(timestamp);
+      console.log("ELSE", timer, minutes)
     }
 
     return () => clearInterval(minutes);
@@ -52,7 +54,7 @@ const JobCard = (props) => {
         <Card.Title>{job.company}</Card.Title>
         <Card.Text>
           {job.title} <br />
-          <span>{timer === 0 ? "added just now" : "added " + timer}</span>
+          <span>{timer===0 || timer === "0 min ago"? "added just now" : "added " + timer}</span>
         </Card.Text>
       </Card.Body>
     </Card>
